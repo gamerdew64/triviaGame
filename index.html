@@ -5,41 +5,41 @@
   <title>Trivia Game!</title>
 
   <!-- Google Fonts -->
-  <!-- Link to custom Google Font -->
+  <!-- Link to custom Google Fonts to make the text more unique -->
 
-
+  <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 
   <!-- CSS - Game Styling -->
   <!-- Link to CSS file for custom styling - no bootstrap -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
   <!-- JQuery -->
   <!-- Common Javascript framework with built-in functionality -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
   <!-- Javascript - Game Logic -->
   <!-- Link to Javascript for functionality in webpage -->
   <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
-<div id="wrapper">
-  <h1 id="title">Totally Trivial Trivia!<h1>
-  <div id="subwrapper">
-    <button id="start">Start Game!</button>
+
+  <div id="loader">
+      <img src="assets/images/loadingGif.gif" width="100%">
   </div>
-</div>
 
+  <div id="musicGroup">
+    <audio id="musicToggle" autoplay="autoplay" controls="controls">
+       <source src="assets/sounds/nightRanger_DTMYLM.mp3"/>
+   </audio>
+ </div>
 
-
-  <!-- <div id="gameBackground">
-    <h1>Totally Trivial Trivia<h1>
-    <p>Testing Game Background</p>
-    <p>Testing Game Background</p>
-    <p>Testing Game Background</p>
-    <p>Testing Game Background</p>
-    <p>Testing Game Background</p>
-    <p>Testing Game Background</p>
-    <p>Testing Game Background</p>
-  </div> -->
+  <div id="mainSection">
+    <h1 id="mainSectionTitle">Classic Rock Trivia!<h1>
+    <div id="gameSection">
+      <button id="beginButton">Begin!</button>
+    </div>
+  </div>
 
 </body>
 </html>
