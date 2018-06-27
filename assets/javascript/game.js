@@ -49,21 +49,26 @@ var game =
 {
   correct: 0,
   incorrect: 0,
-  counter: 120,
+  //NEED TO CHANGE BACK TO 120. USING 20 FOR TESTING
+  counter: 20,
   countdown: function()
   {
     game.counter--;
     $('#counter').html(game.counter);
-    if(game.counter<=0)
+    if(game.counter==0)
     {
       console.log("Time is Up!")
+
+      //This clear interval should be removed once I get the other screen to splash
+      clearInterval(timer);
       game.done();
     }
   },
   start: function()
   {
     timer = setInterval(game.countdown,1000);
-    $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter">120</span> Seconds</h2>');
+    //NEED TO CHANGE BACK TO 120. USING 20 FOR TESTING
+    $('#subwrapper').prepend('<h2>Time Remaining: <span id="counter">20</span> Seconds</h2>');
     // Whenever we hit start, the button is going to get removed
     $('#start').remove();
 
@@ -72,12 +77,12 @@ var game =
 
     for(var i = 0; i<questions.length; i++)
     {
-      $('#subwrapper').append("<h1>" + questions[i].question + "</h1>");
+      $('#subwrapper').append("<h2>" + questions[i].question + "</h2>");
       for(var j = 0; j<questions[j].answers.length; j++)
       {
         // Append each question with a radio type, a name (that is equal to the number of the question), and a value that is equal to the answer.
         // This will let us store the value in the buttons themselves
-        $('#subwrapper').append("<input type= 'radio' name= 'question-'" + i + "' value='" + questions[i].answers[j] + "'>'" + questions[i].answers[j]);
+        $('#subwrapper').append("<input type= 'radio' name= 'question-" + i + "' value='" + questions[i].answers[j] + "'>" + questions[i].answers[j]);
       }
     }
     $('#subwrapper').append('<br><button id="end">DONE</button>');
@@ -89,10 +94,12 @@ var game =
     {
       if($(this).val()==questions[0].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -102,10 +109,12 @@ var game =
     {
       if($(this).val()==questions[1].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -115,10 +124,12 @@ var game =
     {
       if($(this).val()==questions[2].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -128,10 +139,12 @@ var game =
     {
       if($(this).val()==questions[3].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -141,10 +154,12 @@ var game =
     {
       if($(this).val()==questions[4].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -154,10 +169,12 @@ var game =
     {
       if($(this).val()==questions[5].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -167,10 +184,12 @@ var game =
     {
       if($(this).val()==questions[6].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
@@ -180,26 +199,33 @@ var game =
     {
       if($(this).val()==questions[7].correctAnswer)
       {
+        //Increment correct answers
         game.correct++;
       }
       else
       {
+        //Increment incorrect answers
         game.incorrect++;
       }
     });
 
+  // Calls the "result" function that spashes the result totals on the screen
   this.result();
   },
 
   result: function()
   {
+    // Clearing and resetting the timer
     clearInterval(timer);
+    // Removing the set of matched elements from the DOM so that they can be replaced with new content
     $('#subwrapper h2').remove();
+    // New message to display on the screen after the done button has been pressed (see above)
     $('#subwrapper').html("<h2>All done!</h2>");
+    // Shows the total number of correct answers
     $('#subwrapper').append("<h3>Correct Answers: " + this.correct + "</h3>");
+    // Shows the total number of incorrect answers
     $('#subwrapper').append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
-    // How many questiosn where there?
-    // If if it wasn't correct or incorrect, then it must not have been answered
+    // How many questiosn where there? If if it wasn't correct or incorrect, then it must not have been answered
     $('#subwrapper').append("<h3>Unanswered: " + (questions.length-(this.incorrect+this.correct))+ "</h3>");
   }
 }
