@@ -1,0 +1,40 @@
+/* body {
+  background: url("../images/background1.png");
+}
+
+#gameBackground {
+  background: orange;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+  border-left: 5px;
+  border-right: 5px;
+  border-top: 5px;
+  border-bottom: 5px;
+  border-color: blue;
+}
+
+#gameBackground p {
+  font-size: 26px;
+  text-align: center;
+}
+
+#gameBackground h1 {
+  font-size: 48px;
+  text-align: center;
+} */
+
+
+#subwrapper {
+  font-size: 12px;
+  text-decoration: none;
+}
+
+
+h1 {
+  font-family: sans-serif;
+}
+
+button {
+  font-family: sans-serif;
+}
