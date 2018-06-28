@@ -20,15 +20,6 @@
   right: 0;
 }
 
-/* This is regarding the styling of the text that is placed under the music controller */
-/* #musicGroup p
-{
-  padding-left: 50px;
-  padding-top: 45px;
-  bottom: 20px;
-  right: 0;
-} */
-
 #musicToggle
 {
   float: right;
@@ -54,7 +45,7 @@ body
   height: 850px;
   width: 80%;
   text-align: center;
-  text-shadow:
+  text-shadow: /* This adds an orange colored shadow effect to the words on the page to make them better stand out against the background */
     3px 3px 0 #E47446,
   -1px -1px 0 #E47446,
    1px -1px 0 #E47446,
@@ -90,6 +81,28 @@ body
 {
   font-size: 26px;
   margin-top:25px;
+}
+
+#gameOver
+{
+  font-size: 42px;
+  font-family: 'Play', sans-serif;
+}
+
+#correctAnswers
+{
+  font-size: 28px;
+  font-family: 'Play', sans-serif;
+}
+#incorrectAnswers
+{
+  font-size: 28px;
+  font-family: 'Play', sans-serif;
+}
+#unansweredQuestions
+{
+  font-size: 28px;
+  font-family: 'Play', sans-serif;
 }
 
 button
